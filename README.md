@@ -5,7 +5,8 @@
 	(a) Csv files to be combined and converted to parquet
 	(b) Outputs to be partitioned by year
 	(c) User ID to be hashed
-
+ 	(d) PII variables to be dropped
+ 
 (2) This pipeline assumes that incoming files have a definitive schema (variable names and datatypes)
     that has been confirmed with upstream clients.
 
