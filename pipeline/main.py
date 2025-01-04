@@ -5,7 +5,7 @@ Created on Fri Jan  3 09:23:38 2025
 
 @author: DanielCheung
 
-MAIN
+MAIN SCRIPT
 """
 
 import logging
@@ -15,7 +15,7 @@ import yaml
 
 # If running locally update your working directory and run line below;
 # not required in Cloudera
-os.chdir('/Users/DanielCheung/Documents/csv_etl_pipeline/')
+os.chdir('/Users/DanielCheung/Documents/GitHub/csv_etl_pipeline')
 
 # Retrieve config file
 with open(f'pipeline/config.yaml') as f:

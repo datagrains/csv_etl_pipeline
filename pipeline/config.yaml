@@ -2,7 +2,7 @@
 # directory: s3a://onscdp-dev-data01-d000000/user/daniel.cheung
 
 # Directory local (for dummy/testing)
-directory: /Users/DanielCheung/Documents/csv_etl_pipeline
+directory: /Users/DanielCheung/Documents/GitHub/csv_etl_pipeline
 
 # Databases 
 inputs: data/inputs

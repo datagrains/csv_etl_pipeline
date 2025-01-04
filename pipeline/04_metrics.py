@@ -13,10 +13,12 @@ import boto3
 import numpy as np
 import pandas as pd
 import os
+import logging
+
 
 # If running locally update your working directory and run line below;
 # not required in Cloudera
-os.chdir('/Users/DanielCheung/Documents/csv_etl_pipeline')
+os.chdir('/Users/DanielCheung/Documents/GitHub/csv_etl_pipeline')
 from utils import utils
 # fmt: on
 
@@ -36,6 +38,13 @@ for file in config['csv_files']:
     quality_df_input = utils.QualityMetrics.calculate_data_quality(df_source)
     quality_df_processed = utils.QualityMetrics.calculate_data_quality(
         df_processed)
+
+    # Plot charts
+    logging.info(f"Generating charts for {file}")
+    utils.QualityMetrics.plot_quality_metrics(
+        quality_df_input, save_directory=f"{config['temp']}/quality_metrics/raw/charts/{file}_raw")
+    utils.QualityMetrics.plot_quality_metrics(
+        quality_df_processed, save_directory=f"{config['temp']}/quality_metrics/processed/charts/{file}_processed")
 
     # Save it to temp location
     quality_df_input.to_parquet(
