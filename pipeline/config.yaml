@@ -1,0 +1,57 @@
+# Directory in Cloud
+# directory: s3a://onscdp-dev-data01-d000000/user/daniel.cheung
+
+# Directory local (for dummy/testing)
+directory: /Users/DanielCheung/Documents/csv_etl_pipeline
+
+# Databases 
+inputs: data/inputs
+outputs: data/outputs
+temp: data/temp
+salt: data/salt
+
+# Csv files to include
+csv_files: [
+people_1,
+people_2,
+people_3
+]
+
+# Variables to include with their expected types
+variables: 
+  Index: string
+  User Id: string
+  First Name: string
+  Last Name: string
+  Sex: string
+  Email: string
+  Phone: string
+  Date of birth: datetime
+  Job Title: string
+  
+# Columns to remove (e.g. PIIs, unneeded columns)
+remove_columns: [
+'Index',
+'First Name',
+'Last Name',
+'Email',
+'Phone'
+]
+
+# Columns to hash
+cols_to_hash: [
+'Job Title'
+]
+
+# Variables to convert to uppercase
+uppercase: [
+'User Id'
+]
+
+# Columns to partition on (can be existing cols or a cols that will be created)
+partition_columns: [
+'Year of birth'
+]
+
+# Final asset name
+output_asset_name: patients

@@ -1,0 +1,24 @@
+2025-01-04 16:56:14,724 - INFO - Pipeline started...
+2025-01-04 16:56:14,725 - INFO - Extract Data started...
+2025-01-04 16:56:14,984 - INFO - Validating people_1
+2025-01-04 16:56:14,985 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-04 16:56:14,986 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-04 16:56:14,987 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-04 16:56:15,063 - INFO - Validating people_2
+2025-01-04 16:56:15,064 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-04 16:56:15,065 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-04 16:56:15,066 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-04 16:56:15,105 - INFO - Validating people_3
+2025-01-04 16:56:15,106 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-04 16:56:15,107 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-04 16:56:15,108 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-04 16:56:15,143 - INFO - Extract Data completed successfully.
+2025-01-04 16:56:15,148 - INFO - Clean Data started...
+2025-01-04 16:56:15,329 - INFO - Clean Data completed successfully.
+2025-01-04 16:56:15,331 - INFO - Process Data started...
+2025-01-04 16:56:15,470 - INFO - Process Data completed successfully.
+2025-01-04 16:56:15,472 - INFO - QA Data started...
+2025-01-04 16:56:16,015 - INFO - QA Data completed successfully.
+2025-01-04 16:56:16,017 - INFO - Output Results started...
+2025-01-04 16:56:16,127 - INFO - Output Results completed successfully.
+2025-01-04 16:56:16,129 - INFO - Pipeline completed.

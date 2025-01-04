@@ -1,0 +1,1 @@
+pandas>=2.2.3numpy>=2.0.2pyarrowfastparquet>=2024.11.0boto3>=1.24.28yaml
