@@ -1,6 +1,6 @@
 ## Pipeline converting csv files to parquet files:
 
-(1) I have built this pipeline assuming a scenario where the client has requested:
+(1) I have built this pipeline assuming a scenario where according to the following rules:
 
 	(a) Csv files to be combined and converted to parquet
 	(b) Outputs to be partitioned by year
@@ -17,3 +17,5 @@
 (4) I have written this in Python code, as the task instructions specify Python only (and not PySpark etc)
 
 (5) All data included is synthetic
+
+(6) A docker image has been included and pipeline has been tested in Docker and can be run in Cloud environments like AWS and Azure
