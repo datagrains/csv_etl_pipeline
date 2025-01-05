@@ -6,12 +6,8 @@ import os
 os.chdir('/Users/DanielCheung/Documents/csv_etl_pipeline/')
 from utils import utils
 
-from unittest.mock import patch, MagicMock
 import pytest
 import pandas as pd
-import re
-import hashlib
-from datetime import datetime
 import os
 # fmt: on
 

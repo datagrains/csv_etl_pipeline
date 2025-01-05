@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan  3 08:55:09 2025
+Created on Fri Jan  3 08:55:09 2025.
 
 @author: DanielCheung
 

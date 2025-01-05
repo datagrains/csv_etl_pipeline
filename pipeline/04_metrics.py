@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
-
 """
-Created on Fri Jan  3 08:59:38 2025
+Created on Fri Jan  3 08:59:38 2025.
 
 @author: DanielCheung
 
 METRICS AND MONITORING STAGE
 """
 import yaml
-import boto3
-import numpy as np
 import pandas as pd
-import os
 import logging
 from datetime import datetime
 from utils import utils

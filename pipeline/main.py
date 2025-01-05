@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Created on Fri Jan  3 09:23:38 2025
+Created on Fri Jan  3 09:23:38 2025.
 
 @author: DanielCheung
 
@@ -14,6 +14,7 @@ from datetime import datetime
 import os
 import yaml
 import sys
+import boto3
 
 # If running locally in an IDE (Spyder, Jupyter etc) you will need to update
 # your working directory to /.../<filepath>/csv_etl_pipeline;
