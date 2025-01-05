@@ -1,5 +1,4 @@
 ## Pipeline converting csv files to parquet files:
-
 (1) I have built this pipeline assuming a scenario where according to the following rules:
 
 	(a) Csv files to be combined and converted to parquet
@@ -10,12 +9,12 @@
  
 (2) This pipeline assumes that incoming files have a definitive schema (variable names and datatypes)
     that has been confirmed with upstream clients.
-
-(3) In a real scenario, the contents in data and logs would be stored in a Cloud database.
-    These can change in the configs.
-    
-(4) I have written this in Python code, as the task instructions specify Python only (and not PySpark etc)
-
+(3) Contents in data and logs are worked examples. 
+(4) This pipeline is written in pure Python, as per the instructions which specify Python only (and not PySpark etc)
 (5) All data included is synthetic
+(6) A Dockerfile has been included and succesfully tested in Docker; pipeline is deployable to Cloud environments like AWS and Azure
 
-(6) A docker image has been included and pipeline has been tested in Docker and can be run in Cloud environments like AWS and Azure
+## How to use
+(1) Run the main.py script which executes the pipeline from start to finish
+(2) Users of the pipeline simply need to change the config.yaml parameters. No other code changes are required.
+(2) New features can be easily added in for each stage
