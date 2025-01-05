@@ -17,9 +17,6 @@ import os
 from datetime import datetime
 
 
-# If running locally in an IDE (Spyder, Jupyter etc) you will need to update your working directory;
-# This is not required in Cloud environments (AirFlow, CDSW, AWS Lambda etc)
-os.chdir('/Users/DanielCheung/Documents/GitHub/csv_etl_pipeline')
 from utils import utils
 # fmt: on
 
