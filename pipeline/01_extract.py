@@ -5,10 +5,9 @@ Created on Fri Jan  3 08:54:22 2025.
 
 @author: DanielCheung
 
-EXTRACT AND PREVALIDATE STAGE
+EXTRACT AND PREVALIDATE
 """
 
-import os
 import yaml
 import pandas as pd
 import logging
@@ -24,7 +23,7 @@ for file in config["csv_files"]:
     # Read in csv from source database
     df = pd.read_csv(f"{config['inputs']}/{file}.csv")
 
-    # Validate functions
+    # Perform all validations
     logging.info(f"Validating {file}")
     utils.DataFrameValidation.variable_names(df, config)
     utils.DataFrameValidation.variable_types(df, config)

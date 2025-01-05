@@ -24,30 +24,32 @@ for file in config["csv_files"]:
     df_source = pd.read_csv(f"{config['inputs']}/{file}.csv")
     df_processed = pd.read_parquet(f"{config['temp']}/{file}.parquet")
 
-    # Calculate quality metrics
+    # Perform all metrics methods
     quality_df_input = utils.QualityMetrics.calculate_data_quality(df_source)
     quality_df_processed = utils.QualityMetrics.calculate_data_quality(
         df_processed
     )
 
-    # Grab current datetime
-    current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    # Plot charts
+    # Perform all visualisation methods (e.g. charts)
     logging.info(f"Generating charts for {file}")
     utils.QualityMetrics.plot_quality_metrics(
         quality_df_input,
-        save_directory=f"{config['outputs']}/quality_metrics/raw/charts/{file}_raw",
+        save_directory=f"{config['outputs']
+                          }/quality_metrics/raw/charts/{file}_raw",
     )
     utils.QualityMetrics.plot_quality_metrics(
         quality_df_processed,
-        save_directory=f"{config['outputs']}/quality_metrics/processed/charts/{file}_processed",
+        save_directory=f"{
+            config['outputs']}/quality_metrics/processed/charts/{file}_processed",
     )
 
     # Save it to temp location
+    current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
     quality_df_input.to_parquet(
-        f"{config['outputs']}/quality_metrics/raw/{file}_raw_{current_datetime}.parquet"
+        f"{config['outputs']
+           }/quality_metrics/raw/{file}_raw_{current_datetime}.parquet"
     )
     quality_df_processed.to_parquet(
-        f"{config['outputs']}/quality_metrics/processed/{file}_processed_{current_datetime}.parquet"
+        f"{config['outputs']}/quality_metrics/processed/{
+            file}_processed_{current_datetime}.parquet"
     )

@@ -11,7 +11,6 @@ import os
 import sys
 import logging
 import yaml
-import boto3
 from datetime import datetime
 
 
@@ -22,7 +21,7 @@ def set_working_directory(directory: str):
             os.chdir(os.getcwd())
             logging.info(
                 f"Working directory set to: {
-                         os.getcwd()} (Running in IDE)"
+                    os.getcwd()} (Running in IDE)"
             )
         else:
             logging.info("Not running in an IDE. No directory change.")

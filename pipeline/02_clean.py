@@ -4,7 +4,7 @@ Created on Fri Jan  3 08:54:52 2025.
 
 @author: DanielCheung
 
-CLEANING STAGE
+CLEANING
 """
 import yaml
 import pandas as pd
@@ -20,7 +20,7 @@ for file in config["csv_files"]:
     # Read in csv from temp database
     df = pd.read_parquet(f"{config['temp']}/{file}.parquet")
 
-    # Remove PIIs, fix whitespaces, special characters
+    # Perform all cleaning methods
     df = utils.Cleaning.convert_columns_uppercase(df, config["uppercase"])
     df = utils.Cleaning.remove_whitespaces(df)
 
