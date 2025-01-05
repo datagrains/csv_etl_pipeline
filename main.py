@@ -14,17 +14,12 @@ import yaml
 import boto3
 from datetime import datetime
 
-# If running locally in an IDE (Spyder, Jupyter etc) you will need to update
-# your working directory to /.../<filepath>/csv_etl_pipeline;
-# This is not required in Cloud environments (AirFlow, CDSW, AWS Lambda etc)
-directory = os.chdir("/Users/DanielCheung/Documents/GitHub/csv_etl_pipeline")
-
 
 def set_working_directory(directory: str):
     """Set the working directory based on whether the script is running in an IDE."""
     try:
         if any(ide in sys.modules for ide in ["spyder", "IPython", "PyCharm"]):
-            os.chdir(directory)
+            os.chdir(os.getcwd())
             logging.info(
                 f"Working directory set to: {
                          os.getcwd()} (Running in IDE)"
@@ -52,10 +47,9 @@ def setup_logging(config: dict):
     """Set up logging configuration."""
     current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
     log_file = os.path.join(
-        config["directory"],
+        os.getcwd(),
         "logs",
-        f"{
-                            current_datetime}.log",
+        f"{current_datetime}.log",
     )
 
     os.makedirs(os.path.dirname(log_file), exist_ok=True)
@@ -94,13 +88,13 @@ def run_pipeline(scripts: list):
 
 def main():
     """Load config, set the working directory, and run the pipeline."""
-    config = load_config("pipeline/config.yaml")
+    config = load_config("config.yaml")
 
     # Set up logging
     setup_logging(config)
 
     # Set the working directory if running in an IDE
-    set_working_directory(config["directory"])
+    set_working_directory(os.getcwd())
 
     # Define the scripts and their tasks
     scripts = [

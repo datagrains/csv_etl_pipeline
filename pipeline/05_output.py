@@ -12,7 +12,7 @@ import yaml
 from utils import utils
 
 # Retrieve config file
-with open(f'pipeline/config.yaml') as f:
+with open(f"config.yaml") as f:
     config = yaml.safe_load(f)
 
 # Perform formatting and save

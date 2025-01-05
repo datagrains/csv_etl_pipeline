@@ -14,11 +14,11 @@ from utils import utils
 
 
 # Retrieve config file
-with open(f'pipeline/config.yaml') as f:
+with open(f"config.yaml") as f:
     config = yaml.safe_load(f)
 
 # Read in the csv files
-for file in config['csv_files']:
+for file in config["csv_files"]:
 
     # Read in csv from database
     df_source = pd.read_csv(f"{config['inputs']}/{file}.csv")
@@ -27,7 +27,8 @@ for file in config['csv_files']:
     # Calculate quality metrics
     quality_df_input = utils.QualityMetrics.calculate_data_quality(df_source)
     quality_df_processed = utils.QualityMetrics.calculate_data_quality(
-        df_processed)
+        df_processed
+    )
 
     # Grab current datetime
     current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -35,12 +36,18 @@ for file in config['csv_files']:
     # Plot charts
     logging.info(f"Generating charts for {file}")
     utils.QualityMetrics.plot_quality_metrics(
-        quality_df_input, save_directory=f"{config['outputs']}/quality_metrics/raw/charts/{file}_raw")
+        quality_df_input,
+        save_directory=f"{config['outputs']}/quality_metrics/raw/charts/{file}_raw",
+    )
     utils.QualityMetrics.plot_quality_metrics(
-        quality_df_processed, save_directory=f"{config['outputs']}/quality_metrics/processed/charts/{file}_processed")
+        quality_df_processed,
+        save_directory=f"{config['outputs']}/quality_metrics/processed/charts/{file}_processed",
+    )
 
     # Save it to temp location
     quality_df_input.to_parquet(
-        f"{config['outputs']}/quality_metrics/raw/{file}_raw_{current_datetime}.parquet")
+        f"{config['outputs']}/quality_metrics/raw/{file}_raw_{current_datetime}.parquet"
+    )
     quality_df_processed.to_parquet(
-        f"{config['outputs']}/quality_metrics/processed/{file}_processed_{current_datetime}.parquet")
+        f"{config['outputs']}/quality_metrics/processed/{file}_processed_{current_datetime}.parquet"
+    )
