@@ -29,10 +29,10 @@ jobs:
         # Extract the Pylint score
         score=$(echo "$result" | grep -oP 'Your code has been rated at \K[0-9]+')
         
-        # Output the score for visibility
-        echo "Pylint score: $score"
+        # Threshold
+        echo "Pylint threshold: $score"
         
-        # Fail the job if the score is below 7
-        if [ "$score" -lt 7 ]; then
+        # Fail the job if the score is below 7.0
+        if [ "$score" -lt 7.0 ]; then
           echo "Pylint score is below threshold!" && exit 1
         fi
