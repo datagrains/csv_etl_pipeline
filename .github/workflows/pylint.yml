@@ -33,6 +33,6 @@ jobs:
         echo "Pylint threshold: $score"
         
         # Fail the job if the score is below 7.0
-        if [ "$score" -lt 7.0 ]; then
+        if [ "$score" -lt 7 ]; then
           echo "Pylint score is below threshold!" && exit 1
         fi
