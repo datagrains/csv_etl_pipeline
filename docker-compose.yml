@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  csvetlpipeline:
+    image: csvetlpipeline
+    build:
+      context: .
+      dockerfile: ./Dockerfile
