@@ -8,7 +8,6 @@ Created on Fri Jan  3 08:54:22 2025
 EXTRACT AND PREVALIDATE STAGE
 """
 
-# fmt: off
 import yaml
 import boto3
 import numpy as np
@@ -16,7 +15,6 @@ import pandas as pd
 import os
 import logging
 from utils import utils
-# fmt: on
 
 # Retrieve config file
 with open(f'pipeline/config.yaml') as f:

@@ -8,17 +8,13 @@ Created on Fri Jan  3 08:59:38 2025
 LOAD (OUTPUT) STAGE
 """
 
-# fmt: off
 import yaml
 import boto3
 import numpy as np
 import pandas as pd
 import os
 from datetime import datetime
-
-
 from utils import utils
-# fmt: on
 
 # Retrieve config file
 with open(f'pipeline/config.yaml') as f:

@@ -7,15 +7,12 @@ Created on Fri Jan  3 08:54:52 2025
 
 CLEANING STAGE
 """
-# fmt: off
 import yaml
 import boto3
 import numpy as np
 import pandas as pd
 import os
-
 from utils import utils
-# fmt: on
 
 # Retrieve config file
 with open(f'pipeline/config.yaml') as f:

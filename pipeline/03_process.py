@@ -7,14 +7,12 @@ Created on Fri Jan  3 08:55:09 2025
 
 PROCESSING AND TRANSFORM STAGE
 """
-# fmt: off
 import yaml
 import boto3
 import numpy as np
 import pandas as pd
 import os
 from utils import utils
-# fmt: on
 
 # Retrieve config file
 with open(f'pipeline/config.yaml') as f:
