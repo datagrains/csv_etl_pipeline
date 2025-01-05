@@ -1,0 +1,28 @@
+2025-01-05 12:13:46,892 - INFO - Working directory set to: /Users/DanielCheung/Documents/GitHub/csv_etl_pipeline (Running in IDE)
+2025-01-05 12:13:46,893 - INFO - Pipeline started...
+2025-01-05 12:13:46,895 - INFO - Extract Data started...
+2025-01-05 12:13:49,091 - INFO - Validating people_1
+2025-01-05 12:13:49,093 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-05 12:13:49,094 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-05 12:13:49,095 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-05 12:13:49,198 - INFO - Validating people_2
+2025-01-05 12:13:49,200 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-05 12:13:49,201 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-05 12:13:49,203 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-05 12:13:49,259 - INFO - Validating people_3
+2025-01-05 12:13:49,260 - INFO - SUCCESS: Variable names align between config and dataframe.
+2025-01-05 12:13:49,262 - WARNING - Please check that the correct types are consistent in both the table and the config.
+2025-01-05 12:13:49,263 - INFO - SUCCESS: Number of variables matches: 9.
+2025-01-05 12:13:49,291 - INFO - Extract Data completed successfully.
+2025-01-05 12:13:49,293 - INFO - Clean Data started...
+2025-01-05 12:13:49,545 - INFO - Clean Data completed successfully.
+2025-01-05 12:13:49,548 - INFO - Process Data started...
+2025-01-05 12:13:49,675 - INFO - Process Data completed successfully.
+2025-01-05 12:13:49,677 - INFO - Data Metrics started...
+2025-01-05 12:13:49,745 - INFO - Generating charts for people_1
+2025-01-05 12:13:52,404 - INFO - Generating charts for people_2
+2025-01-05 12:13:55,063 - INFO - Generating charts for people_3
+2025-01-05 12:13:57,490 - INFO - Data Metrics completed successfully.
+2025-01-05 12:13:57,492 - INFO - Output Results started...
+2025-01-05 12:13:57,593 - INFO - Output Results completed successfully.
+2025-01-05 12:13:57,595 - INFO - Pipeline completed.

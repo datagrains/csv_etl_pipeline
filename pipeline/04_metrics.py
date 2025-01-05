@@ -14,10 +14,11 @@ import numpy as np
 import pandas as pd
 import os
 import logging
+from datetime import datetime
 
 
-# If running locally update your working directory and run line below;
-# not required in Cloudera
+# If running locally in an IDE (Spyder, Jupyter etc) you will need to update your working directory;
+# This is not required in Cloud environments (AirFlow, CDSW, AWS Lambda etc)
 os.chdir('/Users/DanielCheung/Documents/GitHub/csv_etl_pipeline')
 from utils import utils
 # fmt: on
@@ -39,15 +40,18 @@ for file in config['csv_files']:
     quality_df_processed = utils.QualityMetrics.calculate_data_quality(
         df_processed)
 
+    # Grab current datetime
+    current_datetime = datetime.now().strftime("%Y%m%d_%H%M%S")
+
     # Plot charts
     logging.info(f"Generating charts for {file}")
     utils.QualityMetrics.plot_quality_metrics(
-        quality_df_input, save_directory=f"{config['temp']}/quality_metrics/raw/charts/{file}_raw")
+        quality_df_input, save_directory=f"{config['outputs']}/quality_metrics/raw/charts/{file}_raw")
     utils.QualityMetrics.plot_quality_metrics(
-        quality_df_processed, save_directory=f"{config['temp']}/quality_metrics/processed/charts/{file}_processed")
+        quality_df_processed, save_directory=f"{config['outputs']}/quality_metrics/processed/charts/{file}_processed")
 
     # Save it to temp location
     quality_df_input.to_parquet(
-        f"{config['temp']}/quality_metrics/raw/{file}_raw.parquet")
+        f"{config['outputs']}/quality_metrics/raw/{file}_raw_{current_datetime}.parquet")
     quality_df_processed.to_parquet(
-        f"{config['temp']}/quality_metrics/processed/{file}_processed.parquet")
+        f"{config['outputs']}/quality_metrics/processed/{file}_processed_{current_datetime}.parquet")
