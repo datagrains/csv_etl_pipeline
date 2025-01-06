@@ -13,7 +13,7 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
 - **Metrics and Charts**: Generates useful metrics and visualises data in charts to facilitate analysis.
 - **Unit Testing**: Includes comprehensive unit tests to ensure pipeline integrity and reliability.
 - **Logging**: Implements robust logging for troubleshooting, auditing, and tracking pipeline progress.
-- **CI/CD Cloud-Ready**: Configured for deployment in cloud environments, with integration potential for services like AWS, Azure, and others.
+- **CI/CD Cloud-Ready**: Pipeline built intended for deployment in cloud environments, with integration potential for services like AWS, Azure, and others.
 
 ## Assumptions
 - The pipeline assumes that incoming CSV files conform to a definitive schema, which includes known variable names and data types. This schema should be confirmed with upstream clients before pipeline execution.
