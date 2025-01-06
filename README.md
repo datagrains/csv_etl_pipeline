@@ -76,7 +76,7 @@ CI tests include **unit testing** (pytest) and **linting** (pylint). Failing uni
 ### Cloud deployment
 To deploy the pipeline to a Cloud environment (AWS, Azure etc), add a GitHub Actions workflow file (.yaml) in csv_etl_pipeline/.github/workflows for your target environment.
 
-A pre-configured Dockerfile is included. The workflow builds a Docker image and pushes it to the Cloud whenever the repo is updated. Deployment workflow templates for various environments are available in `GitHub Actions > New Workflow > Deployment > View All` (must be signed into your GitHub account).
+A pre-configured Dockerfile is included. The workflow builds a Docker image and pushes it to the Cloud whenever the repo is updated. Deployment workflow templates for various environments are available in GitHub via `Actions > New Workflow > Deployment > View All` (must be signed into your GitHub account).
 
 As an example, a folder called `aws` has been provided which includes additional files required for deploying to AWS.
 
