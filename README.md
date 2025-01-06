@@ -1,7 +1,9 @@
 # CSV ETL Pipeline
 
 ## Overview
-This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. The pipeline includes functionality for data cleaning (such as the removal of Personally Identifiable Information, PII), metric generation, and visualisation. The solution is built with best practices in mind, including unit tests, logging, and cloud-ready deployment.
+This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. 
+
+The pipeline includes functionality for data cleaning (such as the removal of Personally Identifiable Information, PII), metric generation, and visualisation. The solution is built with best practices in mind, including unit tests, logging, and cloud-ready deployment.
 
 ## Features and Capabilities
 - **CSV to Parquet Conversion**: Efficiently converts CSV files into the optimised Parquet file format for faster querying and reduced storage costs.
