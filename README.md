@@ -19,7 +19,6 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
 - The pipeline assumes that incoming CSV files conform to a definitive schema, which includes known variable names and data types. This schema should be confirmed with upstream clients before pipeline execution.
 - All data used in this pipeline is **synthetic** and provided for demonstration purposes.
 - Example data and log files are included to demonstrate how the pipeline operates with actual inputs.
-- Example data and log files are included to demonstrate how the pipeline operates with actual inputs.
 
 ## How to run
 
