@@ -1,14 +1,14 @@
 # CSV ETL Pipeline
 
 ## Overview
-This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. The pipeline includes functionality for data sanitization (such as the removal of Personally Identifiable Information, PII), metric generation, and visualization. The solution is built with best practices in mind, including unit tests, logging, and cloud-ready deployment.
+This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. The pipeline includes functionality for data cleaning (such as the removal of Personally Identifiable Information, PII), metric generation, and visualisation. The solution is built with best practices in mind, including unit tests, logging, and cloud-ready deployment.
 
 ## Features and Capabilities
-- **CSV to Parquet Conversion**: Efficiently converts CSV files into the optimized Parquet file format for faster querying and reduced storage costs.
+- **CSV to Parquet Conversion**: Efficiently converts CSV files into the optimised Parquet file format for faster querying and reduced storage costs.
 - **Data Cleaning**: Automatically handles missing values, incorrect data types, and other data quality issues.
-- **Data Hashing**: Implements hashing mechanisms to anonymize sensitive information.
+- **Data Hashing**: Implements hashing mechanisms to anonymise sensitive information.
 - **PII Removal**: Identifies and removes Personally Identifiable Information (PII) variables to ensure compliance with privacy standards.
-- **Metrics and Charts**: Generates useful metrics and visualizes data in charts to facilitate analysis.
+- **Metrics and Charts**: Generates useful metrics and visualises data in charts to facilitate analysis.
 - **Unit Testing**: Includes comprehensive unit tests to ensure pipeline integrity and reliability.
 - **Logging**: Implements robust logging for troubleshooting, auditing, and tracking pipeline progress.
 - **CI/CD Cloud-Ready**: Configured for deployment in cloud environments, with integration potential for services like AWS, Azure, and others.
@@ -20,7 +20,7 @@ This repository contains a Python-based ETL (Extract, Transform, Load) pipeline 
 
 ## Technology Stack
 - **Python**: The pipeline is written in Python, in accordance with specified requirements to avoid the use of PySpark or other external frameworks.
-- **Docker**: A `Dockerfile` is included to containerize the pipeline, enabling seamless deployment and testing.
+- **Docker**: A `Dockerfile` is included to containerise the pipeline, enabling seamless deployment and testing.
 - **Parquet**: The pipeline outputs data in the Parquet format, ensuring efficient storage and faster read times for big data analytics.
 
 ## Usage
@@ -57,7 +57,7 @@ Example data and log files are included to demonstrate how the pipeline operates
 
 - **Python**: The pipeline is written in Python, in accordance with specified requirements to avoid the use of PySpark or other external frameworks.
 
-- **Docker**: A Dockerfile is included to containerize the pipeline, enabling seamless deployment and testing.
+- **Docker**: A Dockerfile is included to containerise the pipeline, enabling seamless deployment and testing.
 
 - **Parquet**: The pipeline outputs data in the Parquet format, ensuring efficient storage and faster read times for big data analytics.
 Usage
@@ -73,7 +73,7 @@ python -m unittest discover tests/
 
 ## Logging
 
-The pipeline includes a logging mechanism that captures critical information during execution. Logs are stored locally and can be configured to be sent to cloud storage or a centralized logging service.
+The pipeline includes a logging mechanism that captures critical information during execution. Logs are stored locally and can be configured to be sent to cloud storage or a centralised logging service.
 
 ## License
 
