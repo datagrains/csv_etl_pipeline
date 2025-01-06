@@ -77,7 +77,7 @@ Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, an
 ### Cloud deployment
 For deploying the pipeline to Cloud environments like AWS, Azure, Google Cloud, a Github Action workflow file (.yaml) can be created in `csv_etl_pipeline/.github/workflows` which will depend on the  environment you are working in. 
 
-This workflow will build a docker image and pushes it to the Cloud environment any time code updated in the repo. Workflow file templates for Cloud deployment are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
+This workflow will build a docker image and pushes it to the Cloud environment whenever the repo is updated. Workflow file templates for different Cloud deployments are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
 
 As an example, a folder called `aws` has been provided which is required for deployment to AWS.
 
