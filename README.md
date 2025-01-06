@@ -70,7 +70,7 @@ A `Dockerfile` is included to easily containerise the pipeline and run it in any
 
 ## CI/CD with GitHub Actions
 
-GitHub Actions for Continuous Integration (CI) has been used to automatically run tests on every push and pull request. This ensures that the code is always tested before being merged into the main branch.
+GitHub Actions for Continuous Integration (CI) has been used to automatically run tests on every push and pull request. This ensures that the code is always tested before being merged into the main branch. Tests include **unit testing** (pytest) and **linting** (pylint).
 
 ### Workflow Details
 The GitHub Actions workflow files are configured in the .github/workflows/ folder.
@@ -100,7 +100,7 @@ Usage
 
 ## Testing
 
-Unit tests are included in the tests/ directory. To run the tests locally:
+Unit tests are included in the tests/ directory. To run tests locally:
 
 ```python
 pip install pytest
