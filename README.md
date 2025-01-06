@@ -40,7 +40,7 @@ A Dockerfile is included to easily containerise the pipeline and run it in any e
 
 3. Run the pipeline within Docker:
    ```bash
-   docker run -v /path/to/csv/files:/data csv-etl-pipeline
+   docker run -v csv-etl-pipeline
    ```
 
 ## CI/CD with GitHub Actions
