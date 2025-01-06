@@ -1,3 +1,26 @@
+"""
+Unit Tests for the Utilities Module (utils).
+
+This script contains unit tests for various utility functions found in the 'utils' module. The tests cover multiple categories of functionality including:
+- DataFrame validation methods (e.g., checking column names, types, and count)
+- Data cleaning methods (e.g., removing special characters, whitespaces, and converting columns to uppercase)
+- Data processing methods (e.g., adding year columns, removing PII columns, and hashing columns)
+- Quality metrics methods (e.g., calculating data quality statistics)
+
+The tests are implemented using the 'pytest' framework and are designed to ensure the correctness of each function under various conditions.
+
+The test cases include:
+- Verifying proper DataFrame validation against expected configurations.
+- Ensuring that the cleaning functions modify the data as intended.
+- Validating that the processing functions transform the data appropriately.
+- Confirming that quality metrics are correctly calculated.
+
+Dependencies:
+- utils (custom utility module
+- pytest
+- pandas
+"""
+
 from utils import utils
 import pytest
 import pandas as pd

@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan  3 08:54:52 2025.
+Data Cleaning Script for ETL Pipeline.
 
-@author: DanielCheung
+This script is responsible for performing data cleaning tasks on the extracted and prevalidated data. It reads Parquet files from the temporary storage, applies various cleaning methods, and then saves the cleaned data back to the same location in Parquet format.
 
-CLEANING
+The script performs the following tasks:
+- Loads the configuration from a YAML file to retrieve the list of CSV files and paths.
+- Reads Parquet files from the temporary storage.
+- Applies cleaning operations such as converting specified columns to uppercase and removing whitespaces from all columns.
+- Saves the cleaned DataFrame to the same temporary location.
+
+Key functionalities:
+- **Data Cleaning**: Converts specified columns to uppercase and removes whitespaces from all columns.
+- **File Management**: Reads data from temporary storage, processes it, and saves the cleaned data.
+
+Dependencies:
+- pandas
+- yaml
+- utils (custom utility module)
 """
+
 import yaml
 import pandas as pd
 from utils import utils

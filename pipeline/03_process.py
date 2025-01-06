@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan  3 08:55:09 2025.
+Processing and Transformation Stage Script for ETL Pipeline.
 
-@author: DanielCheung
+This script handles the processing and transformation tasks in the ETL pipeline. It reads Parquet files from the temporary storage, applies transformations such as adding columns, removing sensitive information, and hashing specific columns, and saves the transformed data back to the same location in Parquet format.
 
-PROCESSING AND TRANSFORM STAGE
+The script performs the following tasks:
+- Loads the configuration from a YAML file to retrieve the list of CSV files, columns to hash, and columns to remove.
+- Reads Parquet files from the temporary storage.
+- Applies transformations such as adding a 'year' column, removing PII (Personally Identifiable Information) columns, hashing specified columns using a salt, and adding a source file variable.
+- Saves the transformed DataFrame to the same temporary location.
+
+Key functionalities:
+- **Data Transformation**: Adds new columns, removes sensitive data, hashes specified columns, and tags the data with the source file name.
+- **File Management**: Reads data from temporary storage, processes it, and saves the transformed data back.
+
+Dependencies:
+- pandas
+- yaml
+- utils (custom utility module)
 """
+
 import yaml
 import pandas as pd
 from utils import utils

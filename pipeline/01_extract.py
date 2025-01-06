@@ -1,11 +1,24 @@
-# -*- coding: utf-8 -*-
-
+# -*: utf-8 -*-
 """
-Created on Fri Jan  3 08:54:22 2025.
+Extract and Prevalidate Script for ETL Pipeline.
 
-@author: DanielCheung
+This script is responsible for extracting CSV files from the source database, performing validation checks on the DataFrame according to the configuration, and saving the validated data to a temporary location in Parquet format.
 
-EXTRACT AND PREVALIDATE
+The script does the following:
+- Loads the configuration from a YAML file to retrieve the list of CSV files and paths.
+- Reads each CSV file from the source directory.
+- Validates the extracted DataFrame based on the configuration using methods from the `utils` module.
+- Saves the validated DataFrame to a temporary directory in Parquet format.
+
+Key functionalities:
+- **Validation**: Ensures the DataFrame’s column names, data types, and column count match the configuration.
+- **File Management**: Reads input files, processes them, and stores them in a specified output format (Parquet).
+
+Dependencies:
+- pandas
+- yaml
+- logging
+- utils (custom utility module)
 """
 
 import yaml
