@@ -42,7 +42,7 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
    pip install -r requirements.txt
    ```
 
-4. **Configure the config.yaml**: A worked example is already included for testing. You can configure the config.yaml file according to your needs; open the `config.yaml` file in a text editor and adjust the settings as needed. 
+4. **Configure the config.yaml**: A worked example is already included for testing. You can configure the `config.yaml` file according to your needs; open the `config.yaml` file in a text editor and adjust the settings as needed. 
 
 6. **Run the Program** : Once your `config.yaml` is configured, you can run the program by executing the `main.py` file:
 
