@@ -1,15 +1,6 @@
-# -*- coding: utf-8 -*-
-# fmt: off
-import os
-# If running locally update your working directory and run line below;
-# not required in Cloudera
-os.chdir('/Users/DanielCheung/Documents/csv_etl_pipeline/')
 from utils import utils
-
 import pytest
 import pandas as pd
-import os
-# fmt: on
 
 
 @pytest.fixture
