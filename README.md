@@ -91,15 +91,6 @@ As an example, a folder called `aws` has been provided which is required for dep
 Usage
 
 
-## Testing
-
-Unit tests are included in the tests/ directory. To run tests locally:
-
-```python
-pip install pytest
-pytest
-```
-
 ## Logging
 
 The pipeline includes a logging mechanism that captures critical information during execution. Logs are stored locally and can be configured to be sent to cloud storage or a centralised logging service.
