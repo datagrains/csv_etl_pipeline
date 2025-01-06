@@ -79,7 +79,7 @@ For deploying the pipeline to Cloud environments (like AWS, Azure, Google Cloud)
 
 The deployment workflow will build a docker image and pushes it to the Cloud environment whenever the repo is updated. Deployment workflow file templates for different Cloud environments are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
 
-As an illustrative example, a folder called `aws` has been provided which is required for deployment to AWS.
+As an example, a folder called `aws` has been provided which is required for deployment to AWS.
 
 
 ## Technology Stack
