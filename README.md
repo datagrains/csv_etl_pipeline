@@ -1,13 +1,14 @@
 # CSV ETL Pipeline
 
 ## Overview
-This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. Additional features include functionality for data cleaning (e.g. resolving whitespaces and removing Personally Identifiable Information), hashing, pipeline logging, metric generation and visualisation. The solution is built with best practices in mind, including unit tests, logging, PEP 8 and PEP 257 style compliance, modularity, and cloud-ready deployment. 
+This repository contains a Python-based ETL (Extract, Transform, Load) pipeline designed to process CSV files, clean and transform data, and store it in a Parquet format. Additional features include functionality for data cleaning, removing Personally Identifiable Information, hashing, pipeline logging, metric generation and visualisation. The solution is built with best practices in mind, including unit tests, logging, PEP 8 and PEP 257 style compliance, modularity, and cloud-ready deployment. 
 
 ## Features and Capabilities
 - **CSV to Parquet Conversion**: Efficiently converts CSV files into the optimised Parquet file format for faster querying and reduced storage costs.
-- **Data Cleaning**: Automatically handles missing values, incorrect data types, and other data quality issues.
-- **Data Hashing**: Implements hashing mechanisms to anonymise sensitive information.
-- **PII Removal**: Identifies and removes Personally Identifiable Information (PII) variables to ensure compliance with privacy standards.
+- **Data Validation**: Ensures schema is as expected, otherwise logs warnings.
+- **Data Cleaning**: Handles data quality issues like whitespaces and case conversion.
+- **Data Hashing**: Implements hashing mechanism to anonymise sensitive information.
+- **PII Removal**: Ability to remove Personally Identifiable Information (PII) variables to ensure compliance with privacy standards.
 - **Metrics and Charts**: Generates useful metrics and visualises data in charts to facilitate analysis.
 - **Unit Testing**: Includes comprehensive unit tests to ensure pipeline integrity and reliability.
 - **Logging**: Implements robust logging for troubleshooting, auditing, and tracking pipeline progress.
