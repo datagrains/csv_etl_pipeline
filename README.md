@@ -68,7 +68,8 @@ Usage
 Unit tests are included in the tests/ directory. To run the tests locally:
 
 ```python
-python -m unittest discover tests/
+pip install pytest
+pytest
 ```
 
 ## Logging
