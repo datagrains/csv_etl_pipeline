@@ -21,11 +21,6 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
 - Example data and log files are included to demonstrate how the pipeline operates with actual inputs.
 - Example data and log files are included to demonstrate how the pipeline operates with actual inputs.
 
-## Technology Stack
-- **Python**: The pipeline is written in Python, in accordance with specified requirements to avoid the use of PySpark or other external frameworks.
-- **Docker**: A `Dockerfile` is included to containerise the pipeline, enabling seamless deployment and testing.
-- **Parquet**: The pipeline outputs data in the Parquet format, ensuring efficient storage and faster read times for big data analytics.
-
 ## How to run
 
 ### Running locally
@@ -91,8 +86,6 @@ The GitHub Actions workflow files are configured in the .github/workflows/ folde
 - **Run tests**: The pytest and pylint tests are executed. For pytest, any unit test that fails will cause the workflow to fail. For pylint, a threshold of 7.0 has been set and a linting score below that will cause workflow failure. 
 
 - **Report results**: Results are reported directly on the GitHub Actions page.
-
-
 
 
 ## Technology Stack
