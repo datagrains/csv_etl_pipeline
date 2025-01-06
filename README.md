@@ -70,22 +70,13 @@ A `Dockerfile` is included to easily containerise the pipeline and run it in any
 
 ## CI/CD with GitHub Actions
 
-GitHub Actions for Continuous Integration (CI) has been used to automatically run tests on every push and pull request. This ensures that the code is always tested before being merged into the main branch. Tests include **unit testing** (pytest) and **linting** (pylint).
+### Unit tests and linting
+GitHub Actions for Continuous Integration (CI) has been used to automatically run tests on every push and pull request. This ensures that the code is always tested before being merged into the main branch. 
 
-### Workflow Details
-The GitHub Actions workflow files are configured in the .github/workflows/ folder.
+Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, any unit test that fails will cause the workflow to fail. For pylint, a threshold of 7.0 has been set and a linting score below that will cause workflow failure. Results are reported directly on the GitHub Actions page.
 
-### Steps in the Workflow:
-
-- **Code checkout**: The workflow starts by checking out the latest code from the repository.
-
-- **Set up Python**: It then sets up the Python environment with the specified Python version.
-
-- **Install dependencies**: The required dependencies, including pytest, are installed using pip install -r requirements.txt.
-
-- **Run tests**: The pytest and pylint tests are executed. For pytest, any unit test that fails will cause the workflow to fail. For pylint, a threshold of 7.0 has been set and a linting score below that will cause workflow failure. 
-
-- **Report results**: Results are reported directly on the GitHub Actions page.
+### Cloud deployment
+For deploying the pipeline to Cloud like AWS, Azure, Google Cloud, a Github Action workflow file (.yaml) can be created in `csv_etl_pipeline/.github/workflows`. Templates are available in [here](https://github.com/datagrains/csv_etl_pipeline/actions/new). 
 
 
 ## Technology Stack
