@@ -17,26 +17,9 @@ Created on: Fri Jan 3 09:23:38 2025
 @author: DanielCheung
 """
 import os
-import sys
 import logging
 import yaml
 from datetime import datetime
-
-
-def set_working_directory(directory: str):
-    """Set the working directory based on whether the script is running in an IDE."""
-    try:
-        if any(ide in sys.modules for ide in ["spyder", "IPython", "PyCharm"]):
-            os.chdir(os.getcwd())
-            logging.info(
-                f"Working directory set to: {
-                    os.getcwd()} (Running in IDE)"
-            )
-        else:
-            logging.info("Not running in an IDE. No directory change.")
-    except Exception as e:
-        logging.error(f"Error occurred while setting working directory: {e}")
-
 
 def load_config(config_path: str):
     """Load configuration from a YAML file."""
@@ -70,7 +53,7 @@ def setup_logging(config: dict):
             logging.FileHandler(log_file),  # Log to file
         ],
     )
-
+    
 
 def execute_script(script_path: str, task_name: str):
     """Execute a script and logs its success or failure."""
@@ -101,9 +84,6 @@ def main():
     # Set up logging
     setup_logging(config)
 
-    # Set the working directory if running in an IDE
-    set_working_directory(os.getcwd())
-
     # Define the scripts and their tasks
     scripts = [
         ("pipeline/01_extract.py", "Extract Data"),
@@ -115,7 +95,6 @@ def main():
 
     # Run the pipeline
     run_pipeline(scripts)
-
 
 if __name__ == "__main__":
     main()
