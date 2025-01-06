@@ -75,7 +75,9 @@ GitHub Actions for Continuous Integration (CI) has been used to automatically ru
 Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, any unit test that fails will cause the workflow to fail. For pylint, a threshold of 7.0 has been set and a linting score below that will cause workflow failure. Results are reported directly on the GitHub Actions page.
 
 ### Cloud deployment
-For deploying the pipeline to Cloud environments like AWS, Azure, Google Cloud, a Github Action workflow file (.yaml) can be created in `csv_etl_pipeline/.github/workflows`, which builds a docker image and pushes it to the Cloud environment any time code is pushed to the repo. Workflow file templates are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new).
+For deploying the pipeline to Cloud environments like AWS, Azure, Google Cloud, a Github Action workflow file (.yaml) can be created in `csv_etl_pipeline/.github/workflows` which will depend on the  environment you are working in. 
+
+This workflow will build a docker image and pushes it to the Cloud environment any time code updated in the repo. Workflow file templates for Cloud deplyoment are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
 
 As an example, a folder called `aws` has been provided which is required for deployment to AWS.
 
