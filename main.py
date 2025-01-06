@@ -6,7 +6,6 @@ Main script for running the ETL (Extract, Transform, Load) pipeline.
 This script orchestrates the execution of a sequence of tasks (scripts) defined in a configuration file. It sets the working directory, loads the configuration, configures logging, and runs the ETL pipeline scripts in order. 
 
 Functions included in the module:
-- **set_working_directory(directory: str)**: Sets the working directory based on whether the script is running in an IDE (such as Spyder, IPython, or PyCharm).
 - **load_config(config_path: str)**: Loads the configuration from a YAML file to retrieve necessary settings for the pipeline.
 - **setup_logging(config: dict)**: Sets up the logging configuration, including logging to both the console and a log file.
 - **execute_script(script_path: str, task_name: str)**: Executes a given script and logs its success or failure.
