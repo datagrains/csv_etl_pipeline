@@ -13,7 +13,7 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
 - **Metrics and Charts**: Generates useful metrics and visualises data in charts to facilitate analysis.
 - **Unit Testing**: Includes comprehensive unit tests to ensure pipeline integrity and reliability.
 - **Logging**: Implements robust logging for troubleshooting, auditing, and tracking pipeline progress.
-- **CI/CD Cloud-Ready**: Pipeline built intended for deployment in cloud environments, with integration potential for services like AWS, Azure, and others.
+- **CI/CD Cloud-Ready**: Built for deployment to cloud environments and includes a Dockerfile, with integration potential for services like AWS, Azure, and others.
 
 ## Assumptions
 - The pipeline assumes that incoming CSV files conform to a definitive schema, which includes known variable names and data types. This schema should be confirmed with upstream clients before pipeline execution.
@@ -77,7 +77,7 @@ Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, an
 ### Cloud deployment
 For deploying the pipeline to Cloud environments (like AWS, Azure, Google Cloud), a new Github Action workflow file (.yaml) can be added to `csv_etl_pipeline/.github/workflows`, depending on the environment you wish to deploy the pipeline to.
 
-The deployment workflow will build a docker image and pushes it to the Cloud environment whenever the repo is updated. Deployment workflow file templates for different Cloud environments are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
+The deployment workflow will build a docker image (using the included Dockerfile) and pushes it to the Cloud environment whenever the repo is updated. Deployment workflow file templates for different Cloud environments are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
 
 As an example, a folder called `aws` has been provided which is required for deployment to AWS.
 
