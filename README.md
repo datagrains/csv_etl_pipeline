@@ -26,8 +26,33 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
 - **Docker**: A `Dockerfile` is included to containerise the pipeline, enabling seamless deployment and testing.
 - **Parquet**: The pipeline outputs data in the Parquet format, ensuring efficient storage and faster read times for big data analytics.
 
-### Docker Support
-A Dockerfile is included to easily containerise the pipeline and run it in any environment with Docker support (e.g. AWS, Azure, Google Cloud).
+## How to run
+
+### Running locally
+
+1. **Clone repo**: First, clone the repository to your local machine and set the current directory to the repo path:
+
+   ```python
+   git clone https://github.com/datagrains/csv_etl_pipeline.git
+   cd csv_etl_pipeline
+   ```
+
+3. **Install Dependencies**: Make sure you have the required dependencies installed. You can install the dependencies using pip: 
+   ```python
+   pip install -r requirements.txt
+   ```
+
+4. **Configure the config.yaml**: A worked example is already included for testing. You can configure the config.yaml file according to your needs; open the `config.yaml` file in a text editor and adjust the settings as needed. 
+
+6. **Run the Program** : Once your `config.yaml` is configured, you can run the program by executing the `main.py` file:
+
+   ```bash
+   python main.py
+   ```
+   This will start the program and it will use the settings you configured in `config.yaml`. Note that if running on Mac OS with an IDE like Spyder or Jupyter, you may need to install Xcode Command Line Tools to interact with Git. Ensure your working directory is set to ../csv_etl_pipeline in your IDE, and prefix all terminal commands with `!`.
+
+### Running via Docker
+A `Dockerfile` is included to easily containerise the pipeline and run it in any environment with Docker support (e.g. AWS, Azure, Google Cloud).
 
 1. Clone this repository:
    ```bash
