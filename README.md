@@ -49,7 +49,10 @@ The pipeline includes functionality for data cleaning (such as the removal of Pe
    ```bash
    python main.py
    ```
-   This will start the program and it will use the settings you configured in `config.yaml`. Note that if running on Mac OS with an IDE like Spyder or Jupyter, you may need to install Xcode Command Line Tools to interact with Git. Ensure your working directory is set to ../csv_etl_pipeline in your IDE, and prefix all terminal commands with `!`.
+   This will start the program and it will use the settings you configured in `config.yaml`.
+
+   (Note that if running on Mac OS with an IDE like Spyder or Jupyter, you may need to install Xcode Command Line Tools to interact with Git.
+   Ensure your working directory is set to ../csv_etl_pipeline in your IDE, and prefix all terminal commands with `!`).
 
 ### Running via Docker
 A `Dockerfile` is included to easily containerise the pipeline and run it in any environment with Docker support (e.g. AWS, Azure, Google Cloud).
