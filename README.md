@@ -72,7 +72,7 @@ A `Dockerfile` is included to easily containerise the pipeline and run it in any
 ### Unit tests and linting
 GitHub Actions for Continuous Integration (CI) has been used to automatically run tests on every push and pull request. This ensures that the code is always tested before being merged into the main branch. 
 
-Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, any unit test that fails will cause the workflow to fail. For pylint, a threshold of 7.0 has been set and a linting score below that will cause workflow failure. Results are reported directly on the GitHub Actions page.
+Tests include **unit testing** (pytest) and **linting** (pylint). For pytest, any unit test that fails will cause the workflow to fail. Failing unit tests or a pylint scores below 7 will cause the workflow to fail. Results are reported directly on the GitHub Actions page.
 
 ### Cloud deployment
 To deploy the pipeline to Cloud environments (AWS, Azure, Google Cloud etc), add a GitHub Actions workflow file (.yaml) in csv_etl_pipeline/.github/workflows for your target environment.
