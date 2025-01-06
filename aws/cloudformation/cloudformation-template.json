@@ -1,0 +1,118 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+      "CSVETLCluster": {
+        "Type": "AWS::ECS::Cluster",
+        "Properties": {
+          "ClusterName": "csv-etl-cluster"
+        }
+      },
+      "CSVETLExecutionRole": {
+        "Type": "AWS::IAM::Role",
+        "Properties": {
+          "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Principal": {
+                  "Service": "ecs-tasks.amazonaws.com"
+                },
+                "Action": "sts:AssumeRole"
+              }
+            ]
+          },
+          "Policies": [
+            {
+              "PolicyName": "CSVETLExecutionRolePolicy",
+              "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                  {
+                    "Effect": "Allow",
+                    "Action": [
+                      "logs:CreateLogStream",
+                      "logs:PutLogEvents",
+                      "ecr:GetAuthorizationToken",
+                      "ecr:BatchGetImage",
+                      "ecr:BatchCheckLayerAvailability"
+                    ],
+                    "Resource": "*"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "CSVETLTaskDefinition": {
+        "Type": "AWS::ECS::TaskDefinition",
+        "Properties": {
+          "Family": "csv-etl-pipeline-task",
+          "ContainerDefinitions": [
+            {
+              "Name": "csv-etl-container",
+              "Image": "your-docker-repo/csv_etl_pipeline:latest",  // Replace with your actual Docker image URI
+              "Cpu": 256,
+              "Memory": 512,
+              "Essential": true,
+              "PortMappings": [
+                {
+                  "ContainerPort": 80,
+                  "HostPort": 80
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "CSVETLService": {
+        "Type": "AWS::ECS::Service",
+        "Properties": {
+          "Cluster": {
+            "Ref": "CSVETLCluster"
+          },
+          "TaskDefinition": {
+            "Ref": "CSVETLTaskDefinition"
+          },
+          "DesiredCount": 2,
+          "LaunchType": "FARGATE",  // You can also use EC2 for ECS
+          "NetworkConfiguration": {
+            "AwsvpcConfiguration": {
+              "AssignPublicIp": "ENABLED",
+              "Subnets": [
+                "subnet-xxxxxxxx", // Replace with your subnet ID
+                "subnet-yyyyyyyy"  // Replace with your second subnet ID
+              ],
+              "SecurityGroups": [
+                "sg-xxxxxxxx"  // Replace with your security group ID
+              ]
+            }
+          }
+        }
+      },
+      "CSVETLLoadBalancer": {
+        "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+        "Properties": {
+          "Name": "csv-etl-lb",
+          "Subnets": [
+            "subnet-xxxxxxxx", // Replace with your subnet ID
+            "subnet-yyyyyyyy"  // Replace with your second subnet ID
+          ],
+          "SecurityGroups": [
+            "sg-xxxxxxxx"  // Replace with your security group ID
+          ]
+        }
+      },
+      "CSVETLTargetGroup": {
+        "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+        "Properties": {
+          "Name": "csv-etl-tg",
+          "Port": 80,
+          "Protocol": "HTTP",
+          "VpcId": "vpc-xxxxxxxx"  // Replace with your VPC ID
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,51 @@
+{
+    "family": "csv_etl_pipeline", 
+    "executionRoleArn": "arn:aws:iam::123456789012:role/ecsTaskExecutionRole", 
+    "networkMode": "awsvpc", 
+    "containerDefinitions": [
+      {
+        "name": "csv_etl_pipeline-container",
+        "image": "123456789012.dkr.ecr.us-east-1.amazonaws.com/csv_etl_pipeline:latest", 
+        "memory": 512,
+        "cpu": 256,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 80,
+            "hostPort": 80,
+            "protocol": "tcp"
+          }
+        ],
+        "environment": [
+          {
+            "name": "CONFIG_PATH",
+            "value": "/path/to/config.yaml"
+          },
+          {
+            "name": "S3_BUCKET",
+            "value": "your-s3-bucket-name"
+          }
+        ],
+        "mountPoints": [
+          {
+            "sourceVolume": "csv_etl_pipeline-volume",
+            "containerPath": "/app"
+          }
+        ]
+      }
+    ],
+    "volumes": [
+      {
+        "name": "csv_etl_pipeline-volume",
+        "host": {
+          "sourcePath": "/ecs/csv_etl_pipeline"
+        }
+      }
+    ],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "memory": "1GB",
+    "cpu": "512"
+  }
+  
