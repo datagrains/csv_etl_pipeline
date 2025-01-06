@@ -79,7 +79,7 @@ To deploy the pipeline to Cloud environments (AWS, Azure, Google Cloud etc), add
 
 A pre-configured Dockerfile is included. The workflow builds a Docker image and pushes it to the Cloud whenever the repo is updated. Deployment templates for various environments are available [here](https://github.com/datagrains/csv_etl_pipeline/actions/new?category=deployment).
 
-As an example, a folder called `aws` has been provided which is required if deploying to AWS.
+As an example, a folder called `aws` has been provided which includes additional files required for deploying to AWS.
 
 
 ## Technology Stack
